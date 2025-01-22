@@ -40,7 +40,7 @@ Affiche dans ta `console` => `Bienvenue dans la boutique <nom_boutique> Aventuri
 - Affiche dans la console `Bienvenue dans mon humble boutique Aventurier. Que veux-tu savoir ? 🤔`
   - `1. Le nom de la boutique`
   - `2. Le nom du Sorcier`
-  - `3. Le prix d'un potion de soin`
+  - `3. Le prix d'une potion de soin`
   - `4. La quantité d'une potion de soin`
 - Fais un `prompt` pour demander à l'aventurier son choix entre 1 et 4
 - Avec un `switch ... case` sur le numéro choisi par l'aventurier, affiche l'information demandée

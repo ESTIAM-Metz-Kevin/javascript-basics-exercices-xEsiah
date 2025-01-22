@@ -34,7 +34,16 @@ switch (choix) {
     break;
   default:
     console.log(
-      `Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix ! 😕`
+      "Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix ! 😕"
     );
     break;
 }
+
+potion_de_soin = prompt("De combien de potion voulez-vous connaître le prix: ");
+console.log(
+  "Prix de",
+  potion_de_soin,
+  "potion(s) de soins :",
+  prix_potion_de_soin * potion_de_soin,
+  "🪙 mon cher Aventurier. 💸"
+);
