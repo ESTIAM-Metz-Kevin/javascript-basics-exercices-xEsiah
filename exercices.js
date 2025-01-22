@@ -39,17 +39,22 @@ switch (choix) {
     break;
 }
 
-function calcul_prix_potion_de_soin(x) {
+let nombre_potion_demandees = prompt(
+  "De combien de potion voulez-vous connaître le prix: "
+);
+
+function calcul_prix_potion_de_soin(prix, nombre) {
+  nombre = prompt("De combien de potion voulez-vous connaître le prix: ");
   console.log(
     "Prix de",
-    x,
+    nombre,
     "potion(s) de soins :",
-    prix_potion_de_soin * x,
+    prix,
     "🪙 mon cher Aventurier. 💸"
   );
+  return prix, nombre;
 }
+
 console.log(
-  calcul_prix_potion_de_soin(
-    (x = prompt("De combien de potion voulez-vous connaître le prix: "))
-  )
+  calcul_prix_potion_de_soin(prix_potion_de_soin, nombre_potion_demandees)
 );
