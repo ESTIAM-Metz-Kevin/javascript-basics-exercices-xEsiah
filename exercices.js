@@ -2,7 +2,7 @@ const nom_sorcier = "Esiah";
 console.log("Le sorcier se nomme :" + nom_sorcier + " ! 🎉");
 
 const nom_boutique = "YoupiShop";
-let potion_de_soin = 50;
+let stock_potion_de_soin = 50;
 let prix_potion_de_soin = 5;
 let statut_boutique_ouverte = true;
 
@@ -30,7 +30,7 @@ switch (choix) {
     console.log("Prix de la potion de soin: ", prix_potion_de_soin);
     break;
   case 4:
-    console.log("Quantité de potion de soin: ", potion_de_soin);
+    console.log("Quantité de potion de soin: ", stock_potion_de_soin);
     break;
   default:
     console.log(
@@ -39,22 +39,49 @@ switch (choix) {
     break;
 }
 
-let nombre_potion_demandees = prompt(
-  "De combien de potion voulez-vous connaître le prix: "
+let nombre_potion_demandees = parseInt(
+  prompt("De combien de potion voulez-vous connaître le prix: ")
 );
 
-function calcul_prix_potion_de_soin(prix, nombre) {
-  nombre = prompt("De combien de potion voulez-vous connaître le prix: ");
-  console.log(
-    "Prix de",
-    nombre,
-    "potion(s) de soins :",
-    prix,
-    "🪙 mon cher Aventurier. 💸"
-  );
-  return prix, nombre;
+let total_commande = 0;
+
+function calcul_prix_potion_de_soin(cout, nombre) {
+  return (cout *= nombre);
+}
+
+total_commande = calcul_prix_potion_de_soin(
+  prix_potion_de_soin,
+  nombre_potion_demandees
+);
+
+console.log(
+  "Prix de",
+  nombre_potion_demandees,
+  "potion(s) de soins :",
+  total_commande,
+  "🪙 mon cher Aventurier. 💸"
+);
+
+let bourse_aventurier = 100;
+let choix_achat = prompt(
+  "Si vous voulez effectuer la transaction veuillez entrer O, N pour la refuser"
+);
+
+function transaction(cout, argent_disponible, stock_potion) {
+  if (choix_achat === "O") {
+    if (argent_disponible >= cout && stock_potion >= nombre_potion_demandees) {
+      stock_potion -= nombre_potion_demandees;
+      argent_disponible -= cout;
+      console.log(
+        "Fond(s) restant(s):",
+        argent_disponible,
+        "Stock restant:",
+        stock_potion
+      );
+    } else console.log("Stock et/ou fonds insuffisants");
+  } else console.log("Transaction annulée");
 }
 
 console.log(
-  calcul_prix_potion_de_soin(prix_potion_de_soin, nombre_potion_demandees)
+  transaction(total_commande, bourse_aventurier, stock_potion_de_soin)
 );
