@@ -85,3 +85,10 @@ function transaction(cout, argent_disponible, stock_potion) {
 console.log(
   transaction(total_commande, bourse_aventurier, stock_potion_de_soin)
 );
+
+Array.types_potion_en_vente = [
+  "Potion de soin",
+  "Potion de mana",
+  "Potion de force",
+];
+console.log("Types de potion en vente: ", Array.types_potion_en_vente);
