@@ -39,7 +39,9 @@ switch (choix) {
     break;
 }
 
-potion_de_soin = prompt("De combien de potion voulez-vous connaître le prix: ");
+calcul_prix_potion_de_soin = prompt(
+  "De combien de potion voulez-vous connaître le prix: "
+);
 console.log(
   "Prix de",
   potion_de_soin,
