@@ -106,3 +106,6 @@ for (let i = 0; i < Array.types_potion_en_vente.length; i++) {
     "disponible !"
   );
 }
+
+Array.types_potion_en_vente.push("Potion de poison");
+console.log("Types de potion en vente: ", Array.types_potion_en_vente);
