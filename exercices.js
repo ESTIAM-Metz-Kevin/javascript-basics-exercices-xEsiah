@@ -129,3 +129,23 @@ Array.inventaire = [
   { Nom: "Potion de force", Prix: 15, Stock: 25 },
   { Nom: "Potion de mana", Prix: 20, Stock: 10 },
 ];
+
+for (let i = 0; i < Array.inventaire.length; i++) {
+  console.log(
+    "Nom: ",
+    Array.inventaire[i].Nom,
+    "\nPrix: ",
+    Array.inventaire[i].Prix,
+    "\nStock: ",
+    Array.inventaire[i].Stock
+  );
+}
+
+console.log("\n\n");
+
+for (let potion of Array.inventaire) {
+  for (let [key, value] of Object.entries(potion)) {
+    console.log(`${key}: ${value}`);
+  }
+  console.log("");
+}
