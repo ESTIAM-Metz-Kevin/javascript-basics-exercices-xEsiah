@@ -119,3 +119,6 @@ stock_potion_de_soin = {
   stock: 50,
 };
 console.log(stock_potion_de_soin);
+
+console.log(stock_potion_de_soin.nom);
+console.log(stock_potion_de_soin["prix"]);
