@@ -2,7 +2,7 @@ const nom_sorcier = "Esiah";
 console.log("Le sorcier se nomme :" + nom_sorcier + " ! 🎉");
 
 const nom_boutique = "YoupiShop";
-let potion_de_soin = 3;
+let potion_de_soin = 50;
 let prix_potion_de_soin = 5;
 let statut_boutique_ouverte = true;
 
@@ -39,13 +39,17 @@ switch (choix) {
     break;
 }
 
-calcul_prix_potion_de_soin = prompt(
-  "De combien de potion voulez-vous connaître le prix: "
-);
+function calcul_prix_potion_de_soin(x) {
+  console.log(
+    "Prix de",
+    x,
+    "potion(s) de soins :",
+    prix_potion_de_soin * x,
+    "🪙 mon cher Aventurier. 💸"
+  );
+}
 console.log(
-  "Prix de",
-  potion_de_soin,
-  "potion(s) de soins :",
-  prix_potion_de_soin * potion_de_soin,
-  "🪙 mon cher Aventurier. 💸"
+  calcul_prix_potion_de_soin(
+    (x = prompt("De combien de potion voulez-vous connaître le prix: "))
+  )
 );
