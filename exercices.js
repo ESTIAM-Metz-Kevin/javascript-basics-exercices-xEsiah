@@ -92,3 +92,17 @@ Array.types_potion_en_vente = [
   "Potion de force",
 ];
 console.log("Types de potion en vente: ", Array.types_potion_en_vente);
+
+console.log(Array.types_potion_en_vente[0]);
+
+console.log(
+  Array.types_potion_en_vente[Array.types_potion_en_vente.length - 1]
+);
+
+for (let i = 0; i < Array.types_potion_en_vente.length; i++) {
+  console.log(
+    "Nous avons au moins un exemplaire de",
+    Array.types_potion_en_vente[i],
+    "disponible !"
+  );
+}
