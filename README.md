@@ -95,7 +95,7 @@ Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans l
 
 ### C'est l'heure de faire l'inventaire...
 
-- Transforme ton tableau de de noms de potions, en tableau d'objets de potions.
+- Transforme ton tableau de noms de potions, en tableau d'objets de potions.
 - Tu peux nommer ta constante `inventaire`
 
 ### Aventurier, regarde tout ce que je vends !

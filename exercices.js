@@ -122,3 +122,10 @@ console.log(stock_potion_de_soin);
 
 console.log(stock_potion_de_soin.nom);
 console.log(stock_potion_de_soin["prix"]);
+
+/* types_potion_en_vente reste un tableau mais désormais il contient des objets! */
+Array.inventaire = [
+  { Nom: "Potion de soin", Prix: 10, Stock: 50 },
+  { Nom: "Potion de force", Prix: 15, Stock: 25 },
+  { Nom: "Potion de mana", Prix: 20, Stock: 10 },
+];
