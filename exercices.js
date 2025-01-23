@@ -292,48 +292,15 @@ function vendre_une_potion(
   }
 
   let chiffre_aleatoire = Math.floor(Math.random() * 5) + 1;
-  console.log(chiffre_aleatoire);
+  // console.log(chiffre_aleatoire);
 
   let deviner_nombre = parseInt(prompt("Devinez un chiffre (de 1 à 5)"));
 
   if (deviner_nombre === chiffre_aleatoire) {
-    let potionARevendre = prompt(
-      "Quelle potion voulez-vous vendre ? (Entrez le nom exact)"
-    );
-    let potionTrouvee = inventaire_de_lacheteur.find(
-      (potion) => potion.Nom === potionARevendre
-    );
-
-    if (potionTrouvee) {
-      let quantite = parseInt(prompt("Combien voulez-vous vendre ?"));
-
-      if (quantite <= potionTrouvee.Quantite) {
-        fonds_acheteur_dispo += quantite * 20; // Prix fixe pour la vente
-        fonds_commercant -= quantite * 20;
-        potionTrouvee.Quantite -= quantite;
-        if (potionTrouvee.Quantite === 0) {
-          inventaire_de_lacheteur = inventaire_de_lacheteur.filter(
-            (potion) => potion !== potionTrouvee
-          );
-        }
-        stock_du_marchand.push({
-          Nom: potionARevendre,
-          Prix: 20,
-          Stock: quantite,
-        });
-        console.log(
-          "Vous avez vendu " + quantite + " potion(s) de " + potionARevendre
-        );
-      } else {
-        console.log("Vous n'avez pas cette quantité.");
-      }
-    } else {
-      console.log("Potion non trouvée dans votre inventaire.");
-    }
+    /* Revenir aux valeurs de base pour fonds_acheteur_dispo, stock_du_marchand, inventaire_de_lacheteur, fonds_commercant */
   } else {
     console.log("Retentez votre chance!");
   }
-
   return {
     fonds_acheteur_dispo,
     stock_du_marchand,
