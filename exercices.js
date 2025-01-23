@@ -225,7 +225,6 @@ function acheter_une_potion(
           let quantite = parseInt(
             prompt("Combien de " + stock_du_marchand[i].Nom + " voulez-vous?")
           );
-
           if (quantite > stock_du_marchand[i].Stock) {
             console.log(
               "Désolé, il ne me reste que " +
@@ -255,11 +254,9 @@ function acheter_une_potion(
             );
           }
           break;
-
         case "Non":
           console.log("Pas de soucis !");
           break;
-
         default:
           console.log("Je n'ai pas bien compris votre réponse ^^'");
           break;
@@ -290,14 +287,20 @@ function vendre_une_potion(
       fonds_commercant,
     };
   }
-
   let chiffre_aleatoire = Math.floor(Math.random() * 5) + 1;
   // console.log(chiffre_aleatoire);
-
   let deviner_nombre = parseInt(prompt("Devinez un chiffre (de 1 à 5)"));
-
   if (deviner_nombre === chiffre_aleatoire) {
-    /* Revenir aux valeurs de base pour fonds_acheteur_dispo, stock_du_marchand, inventaire_de_lacheteur, fonds_commercant */
+    /* ------ valeurs à changer en fonction des informations de base ------ */
+    fonds_acheteur_dispo = 100;
+    stock_du_marchand = [
+      { Nom: "Potion de soin", Prix: 40, Stock: 1 },
+      { Nom: "Potion d'endurance", Prix: 20, Stock: 1 },
+      { Nom: "Potion de mana", Prix: 20, Stock: 2 },
+    ];
+    inventaire_de_lacheteur = [];
+    fonds_commercant = 0;
+    /* -------------------------------------------------------------------- */
   } else {
     console.log("Retentez votre chance!");
   }
